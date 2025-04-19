@@ -1,5 +1,9 @@
-<?php include_once 'header.php'; ?>
-
+<?php include_once 'header.php'; 
+include_once 'config.php';
+if(isset($_SESSION['username'])){
+  header("Location: dashboard.php");
+}
+?>
 <div class="w-50 mx-auto" style="padding-top: 100px;">
   <h1 class="mb-3">Please sign up</h1>
   <form action="loginLogic.php" method = "POST">
@@ -23,7 +27,7 @@
 
     <!-- Register buttons -->
     <div class="text-center">
-      <p>Have an account? <a href="#!">Sign in>
+      <p>Have an account? <a href="register.php">Sign in>
 
     </div>
     <?php include_once 'footer.php'; ?>

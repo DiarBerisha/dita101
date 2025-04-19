@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
              $temSQL->bindParam(":surname", $surname);
              $temSQL->execute();
              echo "Bravo!";
-        header("refresh:3; url=register.php");
+        header("refresh:3; url=login.php");
         }
         // $users = $temSQL->fetchAll();
     }

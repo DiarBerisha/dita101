@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
         if ($temSQL->rowCount() > 0) {
             $data = $temSQL->fetch();
             if (password_verify($password, $data['password'])) {
+                $_SESSION['username'] = $data['username'];
                 header('location: dashboard.php');
             } else {
                 echo "Password is incorrect!";

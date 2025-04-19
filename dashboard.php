@@ -10,6 +10,10 @@
     $getUsers->execute();
 
     $users = $getUsers->fetchAll();
+
+    if(!isset($_SESSION['username'])){
+        header("Location: login.php");
+    }
     ?>
     <div class="d-flex" style="height: 100vh;">
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
@@ -60,6 +64,13 @@
                         </svg>
                         Customers
                     </a>
+                </li><li>
+                    <a href="logout.php" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#people-circle"></use>
+                        </svg>
+                        Logout
+                    </a>
                 </li>
             </ul>
             <hr>
@@ -80,6 +91,8 @@
             </div>
         </div>
         <div class="p-5">
+
+        <h1>Wellcome, <?=$_SESSION['username']?></h1>
     
     
     
